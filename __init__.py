@@ -4,13 +4,15 @@ from os.path import dirname, join
 from adapt.intent import IntentBuilder
 from mycroft import MycroftSkill, intent_handler
 
+import websocket
+import json
+
 # TODO - Localization
 
 class DisplayStuff(MycroftSkill):
 
     def __init__(self):
         super(DisplayStuff, self).__init__(name="DisplayStuff")
-        self.ws = websocket.create_connection("ws://192.168.0.5:9001")
 
     @intent_handler(IntentBuilder("").require("Display").require("Words"))
     def speak_back(self, message):
@@ -26,6 +28,8 @@ class DisplayStuff(MycroftSkill):
 
         words_array = words.split(' ')
         json_command = None
+
+        ws = websocket.create_connection("ws://192.168.0.5:9001")
 
         speak_this = "oh dear, I did not recognise that"
 
@@ -54,6 +58,7 @@ class DisplayStuff(MycroftSkill):
 
         if not json_command is None:
             ws.send(json_command)
+            ws.close()
 
         self.speak(speak_this)
 
