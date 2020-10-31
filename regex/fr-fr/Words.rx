@@ -1,0 +1,3 @@
+dis (?P<Words>.*)
+parle (?P<Words>.*)
+répète (?P<Words>.*)
