@@ -20,6 +20,9 @@ class DisplayStuff(MycroftSkill):
         words = re.sub('^.*?' + message.data['Display'], '', utterance).strip()
 	words_array = words.split(' ')
 
+        self.speak("something funny")
+	return
+
 	speak_this = "oh dear, I did not recognise that"
 
         if words_array[0] == 'recipe':
