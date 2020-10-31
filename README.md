@@ -6,16 +6,17 @@ Its fun to tinker.
 
 
 ## Examples
-* "Display"
-* "Display recipe"
+* "Display clock"
+* "Display weather"
+* "Display garden summary"
+* "Display recipe scones"
 
 ## Credits
 Graham Fisher
 
 ## Category
 **Information**
-Productivitiy
-Producivity
+Productivity
 
 ## Tags
 #Display
