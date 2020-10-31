@@ -2,6 +2,7 @@
 To take utterances and send them via websockets to show on another device's display
 
 ## About
+Its fun to tinker.
 
 
 ## Examples
