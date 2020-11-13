@@ -59,7 +59,7 @@ class DisplayStuff(MycroftSkill):
         if not json_command is None:
             ws.send(json_command)
 
-            ws.send({"action": "tie_display_on"})
+            ws.send(json.dumps({"action": "tie_display_on"}))
 
             ws.close()
 
