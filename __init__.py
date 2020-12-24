@@ -29,7 +29,7 @@ class DisplayStuff(MycroftSkill):
         words_array = words.split(' ')
         json_command = None
 
-        ws = websocket.create_connection("ws://192.168.0.5:9001")
+        ws = websocket.create_connection("ws://192.168.0.20:9001")
 
         speak_this = "oh dear, I did not recognise that"
 
