@@ -58,6 +58,16 @@ class DisplayStuff(MycroftSkill):
                      'description': 'reset to happy state', 'additional': 'python is cool'}
 
 
+        elif words_array[0] == 'forecast':
+            # todo
+            speak_this = "displaying met office weather forecast"
+            json_command = json.dumps({"action": "metOffice"})
+
+        elif words_array[0] == 'met':
+            # todo
+            speak_this = "displaying met office weather forecast"
+            json_command = json.dumps({"action": "metOffice"})
+
         elif words_array[0] == 'weather':
             # todo
             speak_this = "displaying met office weather forecast"
