@@ -38,20 +38,20 @@ class DisplayStuff(MycroftSkill):
                     words_array.pop(0)
                 speak_this = "displaying recipe for " + " ".join(words_array)
                 parm = "?q=" + "+".join(words_array)
-                _ = requests.get("http://127.0.0.1:8000/display/bbc/" + parm, {})
+                _ = requests.get("http://192.168.0.20:8000/display/bbc/" + parm, {})
 
             elif words_array[0] == 'camera':
                 words_array.pop(0)
                 speak_this = "displaying camera " + " ".join(words_array)
-                _ = requests.put("http://127.0.0.1:8000/display/camera/" + str(words_array[0]), {})
+                _ = requests.put("http://192.168.0.20:8000/display/camera/" + str(words_array[0]), {})
 
             elif words_array[0] == 'forecast' or words_array[0] == 'met' or words_array[0] == 'weather':
                 speak_this = "displaying met office weather forecast"
-                _ = requests.put("http://127.0.0.1:8000/display/met", {})
+                _ = requests.put("http://192.168.0.20:8000/display/met", {})
 
             elif words_array[0] == 'garden':
                 speak_this = "displaying summary from garden"
-                _ = requests.put("http://127.0.0.1:8000/display/davis", {})
+                _ = requests.put("http://192.168.0.20:8000/display/davis", {})
         except:
             speak_this = "od dear, that went wrong"
 
