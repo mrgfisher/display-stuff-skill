@@ -38,14 +38,16 @@ class DisplayStuff(MycroftSkill):
                     words_array.pop(0)
                 speak_this = "displaying recipe for " + " ".join(words_array)
                 parm = "?q=" + "+".join(words_array)
-                _ = requests.get("http://192.168.0.20:8000/display/bbc/" + parm, {})
+                model = { "parameter": parm }
+                headers = {"Content-Type": "application/json"}
+                _ = requests.put("http://192.168.0.20:8000/display/bbc", data=json.dumps(model), headers=headers)
 
             elif words_array[0] == 'camera':
                 words_array.pop(0)
                 speak_this = "displaying camera " + " ".join(words_array)
                 _ = requests.put("http://192.168.0.20:8000/display/camera/" + str(words_array[0]), {})
 
-            elif words_array[0] == 'forecast' or words_array[0] == 'met' or words_array[0] == 'weather':
+            elif (words_array[0] == 'forecast') or (words_array[0] == 'met') or (words_array[0] == 'weather'):
                 speak_this = "displaying met office weather forecast"
                 _ = requests.put("http://192.168.0.20:8000/display/met", {})
 
